@@ -1,3 +1,5 @@
+import { LOGO_SRC } from '../../constants/assets'
+
 type LogoSize = 'sm' | 'md' | 'lg' | 'hero'
 
 interface LogoProps {
@@ -20,7 +22,7 @@ export default function Logo({ size = 'md', className = '', showWordmark }: Logo
 
   const img = (
     <img
-      src="/battle8-logo.png"
+      src={LOGO_SRC}
       alt="Battle-8"
       className={imgClass}
     />
