@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Download } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Logo from './ui/Logo'
+import DownloadButton from './ui/DownloadButton'
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -49,14 +50,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="/downloads/battle8-latest.apk"
-          download="battle8-latest.apk"
-          className="btn-primary hidden !py-2.5 !px-4 !text-sm md:inline-flex"
-        >
-          <Download size={16} />
-          Get APK
-        </a>
+        <DownloadButton size="sm" className="hidden md:inline-flex" />
 
         <button
           type="button"
@@ -88,15 +82,11 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/downloads/battle8-latest.apk"
-                download="battle8-latest.apk"
-                className="btn-primary mt-4 w-full"
+              <DownloadButton
+                fullWidth
+                className="mt-4"
                 onClick={() => setMenuOpen(false)}
-              >
-                <Download size={18} />
-                Download APK
-              </a>
+              />
             </div>
           </motion.div>
         )}

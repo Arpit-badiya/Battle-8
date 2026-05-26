@@ -1,5 +1,5 @@
-import { Download } from 'lucide-react'
 import Logo from './ui/Logo'
+import DownloadButton from './ui/DownloadButton'
 
 const footerLinks = [
   { label: 'Terms', href: '#' },
@@ -57,14 +57,7 @@ export default function Footer() {
 
           <div className="lg:text-right">
             <p className="mb-4 text-sm text-(--color-text-secondary)">Ready to play?</p>
-            <a
-              href="/downloads/battle8-latest.apk"
-              download="battle8-latest.apk"
-              className="btn-primary inline-flex"
-            >
-              <Download size={18} />
-              Download APK
-            </a>
+            <DownloadButton className="inline-flex" />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import { Download, ArrowRight, Shield, Zap, Smartphone } from 'lucide-react'
+import { ArrowRight, Shield, Zap, Smartphone } from 'lucide-react'
 import Logo from './ui/Logo'
+import DownloadButton from './ui/DownloadButton'
 
 const highlights = [
   { icon: Shield, text: 'Secure sign-in' },
@@ -34,24 +35,13 @@ export default function Hero() {
             and climb leaderboards — all from one polished Android app.
           </p>
 
-          <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-            <a
-              href="/downloads/battle8-latest.apk"
-              download="battle8-latest.apk"
-              className="btn-primary w-full sm:w-auto"
-            >
-              <Download size={18} />
-              Download free APK
-            </a>
-            <a href="#how-it-works" className="btn-ghost w-full sm:w-auto">
+          <div className="mt-8 flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:items-start">
+            <DownloadButton showMeta fullWidth className="sm:w-auto" />
+            <a href="#how-it-works" className="btn-ghost w-full sm:w-auto sm:self-start sm:mt-1">
               See how it works
               <ArrowRight size={16} className="text-(--color-text-muted)" />
             </a>
           </div>
-
-          <p className="mt-3 text-xs text-(--color-text-muted)">
-            Android 8.0+ · Direct install · No Play Store required
-          </p>
 
           <ul className="mt-10 flex flex-wrap items-center justify-center gap-6 lg:justify-start">
             {highlights.map(({ icon: Icon, text }) => (
